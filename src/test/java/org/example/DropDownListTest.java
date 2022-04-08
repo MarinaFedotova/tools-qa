@@ -26,16 +26,14 @@ public class DropDownListTest extends BaseTest {
   @Owner("Marina Fedotova")
   public void dropDownListTest() {
     expectedCountRows.forEach(
-        number -> {
-          step(
-              "Choose to display " + number + " entries in the drop down list",
-              () -> {
-                actualCountRows = bookStorePage.selectNumberOfRows(number).getAllRows().size();
-                step(
-                    "Table contains " + number + " rows",
-                    () -> softAssert.assertEquals(actualCountRows, number));
-              });
-        });
+        number -> step(
+            "Choose to display " + number + " entries in the drop down list",
+            () -> {
+              actualCountRows = bookStorePage.selectNumberOfRows(number).getAllRows().size();
+              step(
+                  "Table contains " + number + " rows",
+                  () -> softAssert.assertEquals(actualCountRows, number));
+            }));
     softAssert.assertAll();
   }
 }
