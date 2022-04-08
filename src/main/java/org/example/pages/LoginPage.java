@@ -1,15 +1,15 @@
 package org.example.pages;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Getter
 public class LoginPage extends BasePage {
 
-  private static final String MENU_ITEM = "Profile";
-
-  private final String name = "MarinaTest";
-  private final String password = "test123T#";
+  private final String login = reader.getProperty("user.login");
+  private final String password = reader.getProperty("user.password");
 
   @FindBy(id = "userName")
   private WebElement loginInput;
@@ -25,7 +25,7 @@ public class LoginPage extends BasePage {
   }
 
   public ProfilePage login() {
-    loginInput.sendKeys(name);
+    loginInput.sendKeys(login);
     passwordInput.sendKeys(password);
     loginButton.click();
     return new ProfilePage(driver);

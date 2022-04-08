@@ -9,15 +9,15 @@ import org.openqa.selenium.support.FindBy;
 public class Menu extends BasePageComponent {
 
   @FindBy(xpath = "//span[text()='Profile']/..")
-  private WebElement profileItem;
+  private WebElement profileMenuItem;
 
   public Menu(WebDriver driver) {
     super(driver);
   }
 
   public ProfilePage openProfilePage() {
-    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", profileItem);
-    profileItem.click();
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", profileMenuItem);
+    profileMenuItem.click();
     return new ProfilePage(driver);
   }
 }

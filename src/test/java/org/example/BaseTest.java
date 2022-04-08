@@ -3,10 +3,10 @@ package org.example;
 import org.example.pages.BookStorePage;
 import org.example.utils.WebDriverUtils;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+
+import static io.qameta.allure.Allure.step;
 
 public class BaseTest {
 
@@ -16,7 +16,7 @@ public class BaseTest {
   @BeforeTest
   public void beforeSuite() {
     driver = WebDriverUtils.setupWebDriver();
-    bookStorePage = new BookStorePage(driver).openPage();
+    step("Open BookStore page", () -> bookStorePage = new BookStorePage(driver).openPage());
   }
 
   @AfterTest
