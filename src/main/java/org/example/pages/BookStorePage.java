@@ -12,19 +12,19 @@ import java.util.List;
 @Getter
 public class BookStorePage extends BasePage {
 
-  private final String url = "https://demoqa.com/books";
+  private final String url = reader.getProperty("url");
 
   @FindBy(id = "searchBox")
-  private WebElement searchField;
+  private WebElement searchInput;
 
   @FindBy(xpath = "//div[contains(@class, 'rt-tr -even') or contains(@class, 'rt-tr -odd')]")
-  private List<WebElement> searchRows;
+  private List<WebElement> searchResultRows;
 
   @FindBy(css = ".rt-tbody [role='row']")
-  private List<WebElement> rows;
+  private List<WebElement> allRows;
 
   @FindBy(xpath = "//select")
-  private WebElement countRowsSelect;
+  private WebElement numberOfRowsSelect;
 
   @FindBy(css = ".-next")
   private WebElement nextButton;
@@ -33,7 +33,7 @@ public class BookStorePage extends BasePage {
   private WebElement previousButton;
 
   @FindBy(css = ".-pageJump input")
-  private WebElement pageNumberInput;
+  private WebElement currentTableNumberInput;
 
   private final Menu menu;
 
@@ -47,19 +47,19 @@ public class BookStorePage extends BasePage {
     return this;
   }
 
-  public BookStorePage searching(String value) {
-    searchField.clear();
-    searchField.sendKeys(value);
+  public BookStorePage search(String value) {
+    searchInput.clear();
+    searchInput.sendKeys(value);
     return this;
   }
 
-  public BookStorePage selectRows(int number) {
-    Select select = new Select(countRowsSelect);
+  public BookStorePage selectNumberOfRows(int number) {
+    Select select = new Select(numberOfRowsSelect);
     select.selectByValue(String.valueOf(number));
     return this;
   }
 
-  public Integer getPageNumberInput() {
-    return Integer.valueOf(pageNumberInput.getAttribute("value"));
+  public Integer getCurrentTableNumber() {
+    return Integer.valueOf(currentTableNumberInput.getAttribute("value"));
   }
 }

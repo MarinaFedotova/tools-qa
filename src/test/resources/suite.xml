@@ -1,20 +1,20 @@
 <suite name="Test tools-qa">
-    <test name="Login test">
+    <test name="Login check for 'tools-qa'">
         <classes>
             <class name="org.example.LoginTest"/>
         </classes>
     </test>
-    <test name="g">
+    <test name="Check search on BookStore page">
         <classes>
             <class name="org.example.SearchFieldTest"/>
         </classes>
     </test>
-    <test name="h">
+    <test name="Testing a dropdown to set the number of books per page">
         <classes>
             <class name="org.example.DropDownListTest"/>
         </classes>
     </test>
-    <test name="Lj">
+    <test name="Check previous and next button">
         <classes>
             <class name="org.example.PreviousAndNextButtonsTest"/>
         </classes>
