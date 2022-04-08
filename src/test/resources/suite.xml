@@ -1,0 +1,22 @@
+<suite name="Test tools-qa">
+    <test name="Login test">
+        <classes>
+            <class name="org.example.LoginTest"/>
+        </classes>
+    </test>
+    <test name="g">
+        <classes>
+            <class name="org.example.SearchFieldTest"/>
+        </classes>
+    </test>
+    <test name="h">
+        <classes>
+            <class name="org.example.DropDownListTest"/>
+        </classes>
+    </test>
+    <test name="Lj">
+        <classes>
+            <class name="org.example.PreviousAndNextButtonsTest"/>
+        </classes>
+    </test>
+</suite>
