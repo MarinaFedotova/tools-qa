@@ -6,6 +6,8 @@
 
 *.idea
 *.iml
+target
+allure-results
 
 # BlueJ files
 *.ctxt
