@@ -12,9 +12,9 @@ import static io.qameta.allure.Allure.step;
 
 public class DropDownListTest extends BaseTest {
 
+  private final SoftAssert softAssert = new SoftAssert();
   private List<Integer> expectedCountRows;
   private Integer actualCountRows;
-  private final SoftAssert softAssert = new SoftAssert();
 
   @BeforeTest
   public void initialData() {

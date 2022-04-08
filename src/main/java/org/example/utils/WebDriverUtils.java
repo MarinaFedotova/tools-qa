@@ -1,6 +1,5 @@
 package org.example.utils;
 
-import com.beust.jcommander.Parameters;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.experimental.UtilityClass;
 import org.openqa.selenium.WebDriver;

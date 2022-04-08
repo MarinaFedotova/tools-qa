@@ -13,29 +13,21 @@ import java.util.List;
 public class BookStorePage extends BasePage {
 
   private final String url = reader.getProperty("url");
-
+  private final Menu menu;
   @FindBy(id = "searchBox")
   private WebElement searchInput;
-
   @FindBy(xpath = "//div[contains(@class, 'rt-tr -even') or contains(@class, 'rt-tr -odd')]")
   private List<WebElement> searchResultRows;
-
   @FindBy(css = ".rt-tbody [role='row']")
   private List<WebElement> allRows;
-
   @FindBy(xpath = "//select")
   private WebElement numberOfRowsSelect;
-
   @FindBy(css = ".-next")
   private WebElement nextButton;
-
   @FindBy(css = ".-previous")
   private WebElement previousButton;
-
   @FindBy(css = ".-pageJump input")
   private WebElement currentTableNumberInput;
-
-  private final Menu menu;
 
   public BookStorePage(WebDriver driver) {
     super(driver);
